@@ -1,0 +1,18 @@
+For a quick start, see *_test.py.
+
+I. A quick how-to-use guide:
+    1.Choose a predefined network model from Ann.networks
+    2.Choose a loss function from Ann.loss_funcs
+    3.Use the forward method to predict
+    4.Use the loss function to compute gradients
+    5.Use backward to perform back-propogation
+
+II. A quick how-to-build-a-model guide:
+    0.See examples and comments in Ann.networks
+    1.See layers defined in Ann.layers and build a list of layers
+    2.Create a child class based on Ann.network_proto.Network
+    3.Intialize Ann.network_proto.Network by the layer list
+    4.Define set_layer_initializer() to set parameter intialization method for each layer
+    5.Define learner() to set parameter updating method
+    6.Define regulariser() to set regularisation term
+    7.Train and test your network a I.
