@@ -3,6 +3,7 @@ import numpy as np
 from Ann.networks import SimpleNet
 
 if __name__=="__main__":
+    # find pre-defined networks in Ann.networks
     net=SimpleNet()
     
     print("The layers of the network before initialization")

@@ -4,6 +4,34 @@ import Ann.initializers as initializers
 import Ann.learners as learners
 import Ann.loss_funcs as loss_funcs
 
+'''
+    The general structure of a derived class of Ann.network_proto.Network
+
+    The four methods must be implemented.
+
+    Methods
+    -------
+    __init__(arg*)
+        must initialize the parent class(Network) using (layer_list)
+
+    set_layer_initializer():
+        set an initialization method for each layer in the layer_list
+        find the intializers in Ann.intializers
+        set layer.initializer to a callable
+        
+    learner(param,param_grad):
+        the method to update network parameters(weights)
+        find a learner function in Ann.learners
+        return the learner result
+    
+    regulariser(param):
+        the method to compute the gradient parameters from regularisation loss
+        find a regulariser in Ann.loss_funcs
+        return the regulariser result
+    
+'''
+
+
 class SimpleNet(Network):
     def __init__(self):        
         self.layer_list=[

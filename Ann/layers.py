@@ -2,6 +2,54 @@ import numpy as np
 
 from Ann.layer_proto import Layer
 
+'''
+    The general structure of a derived class of Ann.layer_proto.Layer
+
+    The following attributes can be used for computation.
+    The four methods must be implemented.
+
+    Attributes
+    ----------
+        input_shape: tuple, inherited
+            the shape of the input(single example, not batch)
+
+        output_shape: tuple, inherited
+            the shape of the output(single example, not batch)
+
+        param_shapes: list of tuples, inherited
+            the shape of each parameter ndarray
+
+        params: list of ndarrays, inherited
+            the parameter ndarray
+
+    Methods
+    -------
+    __init__(arg*)
+        must initialize the parent class(Layer) using (input_shape,param_shapes,output_shape)
+
+    compute_forward(input):
+        input: ndarray, same shape as input_shape 
+        return the output, a ndarray with same shape as output_shape
+
+    compute_params_grad(output_grad,input,output):
+        output_grad: ndarray, same shape as output_shape
+            the gradient of the output
+        input: ndarray, same shape as input_shape
+            the input in forwarding
+        output: ndarray, same shape as output_shape
+            the output in forwarding        
+        return the gradient of the parameters
+            a list of ndarrays with same shape w.r.t. each param in params.
+
+    compute_input_grad(output_grad,input):
+        output_grad: ndarray, same shape as output_shape
+            the gradient of the output
+        input: ndarray, same shape as input_shape
+            the input in forwarding        
+        return the gradient of the input
+            an ndarrays with same shape as input_shape.
+
+'''
 
 class Relu(Layer):
     def __init__(self,size):

@@ -20,10 +20,12 @@ if __name__=="__main__":
 
     Y=Y.reshape((N,1,1))
 
+    # find pre-defined networks in Ann.networks
     net=FittingNet(k,hidden_num_multiply)
 
     for i in range(0,train_iter):
         prediction_batch=net.forward(X)
+        # other loss functions in Ann.loss_funcs
         loss,loss_batch_grad=MSE_loss(prediction_batch,Y)
         print("iter "+str(i)+"-th loss="+str(loss))
         net.backward(loss_batch_grad)
