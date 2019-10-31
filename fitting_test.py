@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 from Ann.networks import FittingNet
 from Ann.loss_funcs import MSE_loss
 
-# This test train a network to fitting a function
+# This test trains a network to fit a function
 
 if __name__=="__main__":
 
