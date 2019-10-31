@@ -1,6 +1,6 @@
 import numpy as np
 
-from layer_proto import Layer
+from Ann.layer_proto import Layer
 
 
 class Relu(Layer):

@@ -1,8 +1,8 @@
-from network_proto import Network
-import layers
-import initializers
-import learners
-import loss_funcs
+from Ann.network_proto import Network
+import Ann.layers as layers
+import Ann.initializers as initializers
+import Ann.learners as learners
+import Ann.loss_funcs as loss_funcs
 
 class SimpleNet(Network):
     def __init__(self):        
@@ -49,7 +49,7 @@ class FittingNet(Network):
                 layer.initializer=lambda param_shape: initializers.xavier_initializer(param_shape,input_num,output_num)
 
     def learner(self,param,param_grad):
-        return learners.gradient_descent(param,param_grad,0.2)
+        return learners.gradient_descent(param,param_grad,0.1)
 
     def regulariser(self,param):
         return loss_funcs.zero_regularisation(param)

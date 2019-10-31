@@ -1,4 +1,4 @@
-from layer_proto import Layer
+from Ann.layer_proto import Layer
 
 class Network:
     def __init__(self,layer_list):
