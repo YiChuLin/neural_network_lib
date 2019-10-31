@@ -2,6 +2,8 @@ import numpy as np
 
 from Ann.networks import SimpleNet
 
+# This test print all the parameters, inputs and outputs in a forward and backward
+
 if __name__=="__main__":
     # find pre-defined networks in Ann.networks
     net=SimpleNet()
