@@ -15,7 +15,7 @@ if __name__=="__main__":
     # hidden_layer_size/input_size
     hidden_layer_multiply=5
     # training iterations
-    train_iter=2000
+    train_iter=100
 
     # generate training examples
     X=np.random.uniform(-1,1,(N*k))
@@ -46,3 +46,4 @@ if __name__=="__main__":
     plt.plot(X_test.flatten(),Y_test.flatten())
 
     plt.show()
+    

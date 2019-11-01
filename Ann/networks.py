@@ -7,7 +7,7 @@ import Ann.loss_funcs as loss_funcs
 '''
     The general structure of a derived class of Ann.network_proto.Network
 
-    The four methods must be implemented.
+    The four methods to be implemented.
 
     Methods
     -------
