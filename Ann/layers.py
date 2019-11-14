@@ -67,7 +67,7 @@ class Relu(Layer):
         X=input
         X[X>=0]=1
         X[X<0]=0
-        return input*output_grad
+        return X*output_grad
 
 
 class Sigmoid(Layer):
