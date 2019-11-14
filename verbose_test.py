@@ -1,6 +1,7 @@
 import numpy as np
 
 from Ann.networks import SimpleNet
+from Ann.loss_funcs import MSE_loss
 
 # This test print all the parameters, inputs and outputs in one forward-backward pass
 
@@ -23,7 +24,7 @@ if __name__=="__main__":
         for param in layer.params:
             print(param)
 
-    input_batch=np.array([[[1,2]],[[3,4]],[[5,6]]])
+    input_batch=np.random.rand(1,1,4)
     print("Forward with input:")
     print(input_batch)
     prediction_batch=net.forward(input_batch)
@@ -31,11 +32,10 @@ if __name__=="__main__":
     print("Predictions:")
     print(prediction_batch)
 
-    label_batch=8*np.ones((3,1,1))
+    label_batch=np.random.rand(1,1,1)
     print("Labels:")
     print(label_batch)
     
-    from loss_funcs import MSE_loss
     loss,loss_batch_grad=MSE_loss(prediction_batch,label_batch)
     
     print("Loss:")
